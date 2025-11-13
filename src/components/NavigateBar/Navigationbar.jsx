@@ -2,33 +2,27 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Navigationbar.css';
-import { NavLink } from 'react-router-dom';
-import { useNavigate } from "react-router-dom";
-// Removed unnecessary import: import { height } from '@fortawesome/free-regular-svg-icons/faAddressBook';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const NavigationBar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [show, setShow] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
     const dropdownRef = useRef(null);
     const navigate = useNavigate();
 
-    const handleClose = () => setShow(false);
-
     // Handler for 'SIGN OUT'
     const signout = (e) => {
         e.preventDefault();
-        handleClose();
-        navigate("/"); // Navigates to the home page (or login/landing)
+        navigate("/"); // Navigates to home or login page
     };
 
-    // Handler for 'ACCOUNT' (New function)
+    // Handler for 'ACCOUNT'
     const navigateToAccount = () => {
-        setIsDropdownOpen(false); // Close the dropdown menu
-        navigate("/MyAccount"); // Navigate to the MyAccount page
+        setIsDropdownOpen(false);
+        navigate("/MyAccount");
     };
 
-    // Close dropdown on outside click
+    // Close dropdown when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -39,16 +33,15 @@ const NavigationBar = () => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
-    // Scroll Logic for Fixed/Absolute Switch
+    // Scroll Logic for Fixed/Absolute Navbar
     useEffect(() => {
-        // ADJUST THIS VALUE to the exact height of your banner (e.g., 600px)
-        const BANNER_HEIGHT_THRESHOLD = 600; 
+        const BANNER_HEIGHT_THRESHOLD = 600;
 
         const handleScroll = () => {
             if (window.scrollY > BANNER_HEIGHT_THRESHOLD) {
-                setIsSticky(true); // Fixed position, solid background
+                setIsSticky(true);
             } else {
-                setIsSticky(false); // Absolute position, transparent background
+                setIsSticky(false);
             }
         };
 
@@ -57,23 +50,19 @@ const NavigationBar = () => {
     }, []);
 
     const toggleDropdown = (e) => {
-        // Added stopPropagation to prevent Navbar collapse closing on mobile
-        e.stopPropagation(); 
+        e.stopPropagation();
         setIsDropdownOpen((prev) => !prev);
     };
-
-    // Removed the unused handleItemClick function.
 
     const styles = {
         navbar: {
             padding: '12px 0',
-            height:'104px',
+            height: '104px',
             zIndex: 1030,
             transition: 'background-color 0.3s ease',
             top: 0,
             width: '100%',
-            position: isSticky ? 'fixed' : 'absolute', 
-            // Background changes based on scroll
+            position: isSticky ? 'fixed' : 'absolute',
             backgroundColor: isSticky ? '#0a1a2a' : 'transparent',
         },
         navLink: {
@@ -155,7 +144,7 @@ const NavigationBar = () => {
                         <NavLink to="/TVshows" style={styles.navLink}>TV SHOWS</NavLink>
                         <NavLink to="/Newsandpopular" style={styles.navLink}>NEW & POPULAR</NavLink>
 
-                        {/* Icon + dropdown wrapper */}
+                        {/* Icon + dropdown */}
                         <div style={styles.dropdownWrapper} ref={dropdownRef}>
                             <div style={styles.userIconContainer} onClick={toggleDropdown}>
                                 <img src="/images/digit_icon.png" alt="User Icon" style={styles.userIcon} />
@@ -163,7 +152,6 @@ const NavigationBar = () => {
 
                             {isDropdownOpen && (
                                 <div style={styles.dropdownMenu} onClick={e => e.stopPropagation()}>
-                                    {/* UPDATED: Navigates to /MyAccount */}
                                     <div style={styles.dropdownItem} onClick={navigateToAccount}>ACCOUNT</div>
                                     <div style={styles.dropdownItemLast} onClick={signout}>SIGN OUT OF STARFLIX</div>
                                 </div>

@@ -8,7 +8,7 @@ import Movies from "./Webpages/Movies/Movies";
 import TVshows from "./Webpages/Tvshows/TVshows";
 import Newsandpopular from "./Webpages/Newsandpopular/Newsandpopular";
 import AboutMovie from "./Webpages/aboutmovie/AboutMovie";
-import Footer from "./components/Footer/Footer";
+
 import MyAccount from "./Webpages/Account/MyAccount";
 function App() {
   return (

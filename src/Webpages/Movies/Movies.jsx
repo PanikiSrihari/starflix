@@ -5,8 +5,8 @@ import Navigationbar from "../../components/NavigateBar/Navigationbar";
 import { Container, Row, Col, Dropdown, Form, Pagination } from 'react-bootstrap';
 import './Movies.css';
 import Movieinfo from '../../utils/Movieinfo';
-
-import { useNavigate } from "react-router-dom"; // ✅ IMPORT
+import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom"; 
 import Footer from '../../components/Footer/Footer';
 
 const Movies = () => {
@@ -144,9 +144,9 @@ const Movies = () => {
               <Col>
                 <span>
                   Found{' '}
-                  <a href="#" style={{ color: '#3399ff', textDecoration: 'none' }}>
+                  <Link to="" style={{ color: '#3399ff', textDecoration: 'none' }}>
                     {totalMovies}
-                  </a>{' '}
+                  </Link>{' '}
                   movies in total
                 </span>
               </Col>

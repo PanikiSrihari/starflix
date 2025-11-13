@@ -9,7 +9,7 @@ import Search from "../search/Search";
 import movie from "../../utils/AboutMovie"; // Assuming this is your data utility
 import "./AboutMovie.css";
 import Footer from "../../components/Footer/Footer";
-
+import { Link } from 'react-router-dom';
 // -------------------------------------------------------------------
 // CAST & CREW SECTION
 // -------------------------------------------------------------------
@@ -295,7 +295,7 @@ const MovieDetailspage = () => {
                                 {/* ADD TO FAVORITE */}
                                 <li>
                                     <i className="fa-solid fa-heart me-2" style={{ color: "#74C0FC" }}></i>
-                                    <a href="#" style={{ color: "#74C0FC" }} className="text-decoration-none">ADD TO FAVORITE</a>
+                                    <Link to="#" style={{ color: "#74C0FC" }} className="text-decoration-none">ADD TO FAVORITE</Link >
                                 </li>
 
                                 {/* SHARE Dropdown with Hover Logic */}
@@ -316,14 +316,13 @@ const MovieDetailspage = () => {
                                                                    className="fa-solid fa-share-nodes me-2" 
                                                                    style={{ color: "#74C0FC" }} // Icon color
                                                                ></i>
-                                                               <a 
-                                                                   href="#" 
+                                                               <Link to="" 
                                                                    onClick={(e) => e.preventDefault()}
                                                                    style={{ color: "#74C0FC" }} // Link text color FIX
                                                                    className="text-decoration-none"
                                                                >
                                                                    SHARE
-                                                               </a>
+                                                               </Link>
                                                            </div>
                                                        </Dropdown.Toggle>
                                
@@ -331,10 +330,10 @@ const MovieDetailspage = () => {
                                                        <Dropdown.Menu className="share-popup"style={{ backgroundColor: "#74C0FC" }}>
                                                            <div className="d-flex gap-2">
                                                                {/* Social Icons - Replace HREFS with actual share links */}
-                                                               <a href="URL_FACEBOOK" target="_blank" className="text-white"><i className="fa-brands fa-facebook-f"></i></a>
-                                                               <a href="URL_TWITTER" target="_blank" className="text-white"><i className="fa-brands fa-twitter"></i></a>
-                                                               <a href="URL_GOOGLE" target="_blank" className="text-white"><i className="fa-brands fa-google-plus-g"></i></a>
-                                                               <a href="URL_YOUTUBE" target="_blank" className="text-white"><i className="fa-brands fa-youtube"></i></a>
+                                                               <Link to="URL_FACEBOOK" target="_blank" className="text-white"><i className="fa-brands fa-facebook-f"></i></Link>
+                                                               <Link to="URL_TWITTER" target="_blank" className="text-white"><i className="fa-brands fa-twitter"></i></Link>
+                                                               <Link to="URL_GOOGLE" target="_blank" className="text-white"><i className="fa-brands fa-google-plus-g"></i></Link>
+                                                               <Link to="URL_YOUTUBE" target="_blank" className="text-white"><i className="fa-brands fa-youtube"></i></Link>
                                                            </div>
                                                        </Dropdown.Menu>
                                                    </Dropdown>
@@ -351,7 +350,7 @@ const MovieDetailspage = () => {
                                 className="mb-4"
                                 style={{ borderBottom: "none", paddingBottom: "0px" }}
                             >
-                                {["OVERVIEW", "CAST", "ratings"].map((tab) => (
+                                {["overview", "cast", "ratings"].map((tab) => (
                                     <Nav.Item key={tab}>
                                         <Nav.Link
                                             eventKey={tab}
@@ -372,7 +371,7 @@ const MovieDetailspage = () => {
                             </Nav>
 
                             {/* Tab Content */}
-                            {activeTab === "OVERVIEW" && (
+                            {activeTab === "overview" && (
                                 <section>
                                     <Row>
                                         <Col md={8}>
@@ -467,7 +466,7 @@ const MovieDetailspage = () => {
                                 </section>
                             )}
 
-                            {activeTab === "CAST" && (
+                            {activeTab === "cast" && (
                                 <section>
                                     {castSections.map((title, index) => (
                                         <CastCrewSection

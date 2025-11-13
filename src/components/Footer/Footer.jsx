@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import { Container, Row, Col } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
    
@@ -24,8 +24,7 @@ const Footer = () => {
 
                     {/* Back to Top Link */}
                     <Col xs={12} md={4} className="text-center text-md-end">
-                        <a 
-                            href="#" 
+                        <Link to="#" 
                             onClick={(e) => {
                                 e.preventDefault(); // Prevent default link behavior
                                 scrollToTop();
@@ -33,7 +32,7 @@ const Footer = () => {
                             className=" text-white text-decoration-none"
                         >
                             Back to Top <i className="bi bi-arrow-up-circle-fill"></i>
-                        </a>
+                        </Link >
                     </Col>
                 </Row>
             </Container>

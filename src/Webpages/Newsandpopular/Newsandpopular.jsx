@@ -3,7 +3,7 @@ import Search from '../search/Search';
 import Navigationbar from "../../components/NavigateBar/Navigationbar";
 import { Container, Row, Col, Dropdown, Form, Pagination, Button, Card } from 'react-bootstrap';
 import "./Newsandpopular.css";
-
+import { Link } from 'react-router-dom';
 import  Newsinfo from '../../utils/Newsandpopularsinfo';
 import Footer from '../../components/Footer/Footer';
 
@@ -158,9 +158,9 @@ const Movies = () => {
                   <Col>
                     <span>
                       Found{' '}
-                      <a href="#" style={{ color: '#3399ff', textDecoration: 'none' }}>
+                      <Link to="#" style={{ color: '#3399ff', textDecoration: 'none' }}>
                         {totalMovies}
-                      </a>{' '}
+                      </Link>{' '}
                       News in total
                     </span>
                   </Col>
