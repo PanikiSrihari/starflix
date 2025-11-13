@@ -1,0 +1,49 @@
+.banner{
+    background-image: url('/public/images/bgimg.png');
+    background-size: cover;
+    background-position: center;
+
+ 
+    position:relative;
+
+    
+    
+   
+
+}
+.text-orange{
+  color:#e3a22e;
+}
+.about{
+   font-family: "Nunito Sans", sans-serif;
+}
+.py-104{
+  padding-top: 104px;
+  padding-bottom: 104px;
+
+}
+
+.h-900{
+  height:900px;
+}
+
+
+.bg-black{
+  background-color: rgb(3,13,23);
+}
+
+.banner::before{
+    content: '';
+    position: absolute;
+    background-color: rgba(16,33,51);
+    width:100%;
+    height:100%;
+    opacity:0.6;
+}
+.text-blakish{
+  background-color: rgba(6,18,30);
+}
+.share-dropdown-li .dropdown-toggle::after {
+    display: none !important;
+    
+}

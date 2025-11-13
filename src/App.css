@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/*roboto*/
+/*body*/
+
+body {
+    font-family: "Dosis", sans-serif !important;
+    margin: 0;
+    padding: 0;
+    
+   
+    
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7 {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+a {
+    text-decoration: none !important;
+}
+

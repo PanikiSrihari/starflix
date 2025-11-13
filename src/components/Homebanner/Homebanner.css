@@ -1,0 +1,100 @@
+
+
+
+
+
+.carousel-content {
+   
+    width:100%;
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   justify-content: space-between;
+   column-gap: 5px;
+   height:500px;
+  
+   padding:20px 80px;
+   margin-top: 80px;
+
+  
+   
+}
+.carousel-content .movieimage img { 
+    border-radius: 30px;
+    width:80%;
+   
+    
+  
+}
+.carousel-content .information {
+  
+    display:flex;
+    flex-direction: column;
+    row-gap: 18px;
+}
+.carousel-content .information .geners  ul {
+    display:flex;
+    column-gap: 20px;
+
+}
+.carousel-content .information .moviename{
+    color:#ffffff;
+    font-size:60px;
+    font-weight: bold;
+}
+.carousel-content .information .about{
+    color:#ffffff;
+    width:100%;
+    max-width: 800px;
+    font-size: 20px;
+  font-family: "Nunito Sans", sans-serif;
+
+}
+ .information .suggestion .play-btn,.information .suggestion .heart-btn,.information .suggestion .share-btn{
+    color:#13aee6;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    background:none;
+
+}
+ .information .suggestion {
+    
+    display: flex;
+    align-items: center;
+    
+ }
+ .information  .details ul{
+    display :flex;
+    font-size: 20px;
+    color: #aab9b5;
+    column-gap: 20px;
+    font-weight: bold;
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

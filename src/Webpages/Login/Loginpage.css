@@ -1,0 +1,27 @@
+
+
+.login-page{
+    background-image: url('/public/images/bgimg.png');
+ 
+
+    background-size: cover;
+    background-position: center;
+    
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+     align-items: center;
+}
+.w-15{
+ width:15%;
+}
+ 
+.text-blue {
+    color:#13aee6;
+}
+.bg-blue {
+    background-color:#13aee6; 
+}
+.fs-50{
+    font-size: 50px;
+}
